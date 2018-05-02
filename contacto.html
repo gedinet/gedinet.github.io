@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Paolo</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="css/mdb.min.css" rel="stylesheet">
+	<!-- custom styles  -->
+	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/style6.css" />
+	<link rel="stylesheet" type="text/css" href="css/style-adsila.css" />
+	<script src="js/modernizr-custom.js"></script>
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="row align-items-end justify-content-between">
+			<div class="col-lg-3">
+			<a href="index.html"><img src="img/original/logo2.png" class="img-fluid" alt=""></a>
+			</div>
+			<div class="col-lg-7">
+	<nav class="menu menu--adsila text-center">
+		<a class="menu__item" href="index.html">
+			<span class="menu__item-name">Inicio</span>
+			<span class="menu__item-label">Explora mis imagenes</span>
+		</a>
+		<a class="menu__item" href="contacto.html">
+			<span class="menu__item-name">Contacta</span>
+			<span class="menu__item-label">Conmigo</span>
+		</a>
+	</nav>
+	</div>
+	</div>
+</div>
+<hr class="light-grey container mb-5">
+<!-- content  -->
+<div class="container text-center mt-5 pt-5">
+  <h1 class="wow fadeInDown">Contacto</h1>
+  <div class="row mt-5 fadeIn wow" data-wow-delay="0.6s">
+    <div class="col-lg-6 " >
+      <h3 class="" >Correo</h3>
+    <a href="mailto:paolocollarino@gmail.com"><p>paolocollarino@gmail.com</p></a>
+    </div>
+    <div class="col-lg-6">
+      <h3>Redes Sociales</h3>
+      <a href="https://es-la.facebook.com/collarino" class="mr-2"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a>
+      <a href="https://www.instagram.com/paolocollarino/"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/main.js"></script>
+<script>
+
+wow = new WOW({
+    boxClass: 'wow', // default
+    animateClass: 'animated', // default
+    offset: 0, // default
+    mobile: false, 
+    live: true // default
+})
+wow.init();
+
+  (function() {
+    var support = { transitions: Modernizr.csstransitions },
+      // transition end event name
+      transEndEventNames = { 'WebkitTransition': 'webkitTransitionEnd', 'MozTransition': 'transitionend', 'OTransition': 'oTransitionEnd', 'msTransition': 'MSTransitionEnd', 'transition': 'transitionend' },
+      transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+      onEndTransition = function( el, callback ) {
+        var onEndCallbackFn = function( ev ) {
+          if( support.transitions ) {
+            if( ev.target != this ) return;
+            this.removeEventListener( transEndEventName, onEndCallbackFn );
+          }
+          if( callback && typeof callback === 'function' ) { callback.call(this); }
+        };
+        if( support.transitions ) {
+          el.addEventListener( transEndEventName, onEndCallbackFn );
+        }
+        else {
+          onEndCallbackFn();
+        }
+      };
+
+    new GridFx(document.querySelector('.grid'), {
+      imgPosition : {
+        x : 1,
+        y : -0.75
+      },
+      pagemargin : 50,
+      onOpenItem : function(instance, item) {
+        var win = {width: window.innerWidth, height: window.innerHeight};
+        instance.items.forEach(function(el) {
+          if(item != el) {
+            var delay = Math.floor(Math.random() * 150);
+              el.style.WebkitTransition = 'opacity .6s ' + delay + 'ms cubic-bezier(.5,1,.2,1), -webkit-transform .6s ' + delay + 'ms cubic-bezier(.5,1,.2,1)';
+              el.style.transition = 'opacity .6s ' + delay + 'ms cubic-bezier(.5,1,.2,1), transform .6s ' + delay + 'ms cubic-bezier(.5,1,.2,1)';
+
+              el.style.WebkitTransform = 'translate3d(-' + win.width + 'px,0,0)';
+              el.style.transform = 'translate3d(-' + win.width + 'px,0,0)';
+              el.style.opacity = 0;
+          }
+        });
+      },
+      onCloseItem : function(instance, item) {
+        instance.items.forEach(function(el) {
+          if(item != el) {
+            var delay = Math.floor(Math.random() * 150);
+            el.style.WebkitTransition = 'opacity .3s ' + delay + 'ms cubic-bezier(.5,1,.2,1), -webkit-transform .3s ' + delay + 'ms cubic-bezier(.5,1,.2,1)';
+            el.style.transition = 'opacity .3s ' + delay + 'ms cubic-bezier(.5,1,.2,1), transform .3s ' + delay + 'ms cubic-bezier(.5,1,.2,1)';
+
+
+            el.style.WebkitTransform = 'translate3d(0,0,0)';
+            el.style.transform = 'translate3d(0,0,0)';
+            el.style.opacity = 1;
+
+            onEndTransition(el, function() {
+              el.style.transition = 'none';
+              el.style.WebkitTransform = 'none';
+            });
+          }
+        });
+      }
+    });
+  })();
+</script>
+</body>
+</html>

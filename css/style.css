@@ -1,61 +1,80 @@
-/* Your custom styles */
-html,
-body,
-header,
-#intro {
-    height: 100%;
-}
-
-#intro {
-    background: url("../img/header3.jpeg")no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-#intro1 {
-    background: url("../img/header2.jpeg")no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 50vh;
-    width: 100%;
+body {
+	color: #333;
 
 }
 
-.top-nav-collapse {
-    background-color: #24355C;
+.wow {
+    visibility: hidden;
 }
 
-.view {
-  height: 50vh;
+/* Color schemes */
+.demo-adsila {
+	--color-text: #57585c;
+	--color-background: #fff;
+	--color-link: #5d93d8;
+	--color-link-hover: #423c2b;
 }
-.view img {
-  height: 50vh;
-  width: 100%;
+
+a {
+	text-decoration: none;
+	color: #5d93d8;
+	color: var(--color-link);
+	outline: none;
 }
-.carousel-item img {
-  height: 50vh !important;
+
+a:hover,
+a:focus {
+	color: #423c2b;
+	color: var(--color-link-hover);
+	outline: none;
 }
-@media query (max-width: 762px){
-  .view img {
-    height: 100vh !important;
-    width: 100%;
-  }
+
+/* Common styles for the menus */
+.menu {
+	position: relative;
+	z-index: 10;
 }
-@media query (max-width: 762px){
-  .view {
-    height: 100vh !important;
-    width: 100%;
-  }
+
+.menu__item {
+	line-height: 1;
+	position: relative;
+	display: block;
+	margin: 1em 0;
+	outline: none;
+  float: left;
 }
-.fa-facebook:hover {
-  color: blue !important;
+
+.menu__item-name,
+.menu__item-label {
+	position: relative;
+	display: inline-block;
 }
-.fa-youtube:hover {
-  color: red !important;
+
+.menu__item-name {
+	font-size: 1.25em;
 }
-.fa-instagram:hover {
-  color: pink !important;
+
+.menu__item-label {
+	margin: 0 0 0 0.5em;
+}
+a i:hover {
+	color: #555;
+}
+@media only screen and (max-width: 768px) {
+	.menu{
+		display: flex;
+		flex-direction: column;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.grid__item {
+		width: 300px !important;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.action--close {
+		bottom: 0 !important;
+		top: auto !important;
+		right: auto !important;
+	}
 }
